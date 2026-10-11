@@ -1,24 +1,13 @@
-export default function StudentCard(){
-    return(
-        <>
-        <div class="rounded-xl bg-white p-5 shadow">
-          <h3 class="text-lg font-bold">
-            Youssef
-          </h3>
-
-          <p class="mt-2 text-slate-500">
-            Note : 16 / 20
-          </p>
-        </div>
-        <div class="rounded-xl bg-white p-5 shadow">
-          <h3 class="text-lg font-bold">
-            Ghita
-          </h3>
-
-          <p class="mt-2 text-slate-500">
-            Note : 18 / 20
-          </p>
-        </div>
-        </>
-    )
+export default function StudentCard({ prenom, note }){
+  const couleurCard = note >= 10 ? "bg-white" : "bg-red-400";
+  return(
+    <div className={`rounded-xl ${couleurCard} p-5 shadow`}>
+      <h3 className="text-lg font-bold">
+        {prenom}
+      </h3>
+      <p className="mt-2 text-slate-500">
+        Note : {note} / 20
+      </p>
+    </div>
+  );
 }
